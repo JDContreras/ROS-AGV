@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+46bc4da173307854ab89024b0a22176d /home/rospuj/capbot_ws/devel/share/roseus/ros/marker/manifest.l
+3c16bb0815a4d89a03bc6c9ed24d4a25 CMakeFiles/clean_test_results

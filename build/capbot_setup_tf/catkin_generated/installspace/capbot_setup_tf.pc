@@ -1,0 +1,8 @@
+prefix=/home/rospuj/capbot_ws/install
+
+Name: capbot_setup_tf
+Description: Description of capbot_setup_tf
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

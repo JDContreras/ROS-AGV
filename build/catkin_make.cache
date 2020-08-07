@@ -1,0 +1,2 @@
+capbot_control:capbot_description:capbot_gazebo:capbot_setup_tf
+-DCATKIN_DEVEL_PREFIX=/home/rospuj/capbot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/rospuj/capbot_ws/install -G Unix Makefiles

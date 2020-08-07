@@ -1,0 +1,8 @@
+prefix=/home/rospuj/capbot_ws/install
+
+Name: capbot
+Description: Description of capbot
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

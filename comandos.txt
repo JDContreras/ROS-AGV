@@ -1,0 +1,13 @@
+source /opt/ros/kinetic/setup.bash
+catkin_make
+source devel/setup.bash
+
+
+
+roslaunch capbot_gazebo capbot.launch
+rosrun capbot_setup_tf tf_broadcaster
+rosbag record -O laserdata /LaserScan /tf
+rosrun gmapping slam_gmapping scan:=LaserScan
+rosrun rviz rviz
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+

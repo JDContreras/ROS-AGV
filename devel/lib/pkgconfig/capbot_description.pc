@@ -1,0 +1,8 @@
+prefix=/home/rospuj/capbot_ws/devel
+
+Name: capbot_description
+Description: Description of capbot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
