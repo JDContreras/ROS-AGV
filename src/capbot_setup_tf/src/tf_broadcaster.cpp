@@ -6,7 +6,7 @@ int main(int argc, char** argv){
   ros::init(argc, argv, "capbot_tf_publisher");
   ros::NodeHandle n;
 
-  ros::Rate r(100);
+  ros::Rate r(200);
 
   tf::TransformBroadcaster broadcaster;
   ROS_INFO("running");

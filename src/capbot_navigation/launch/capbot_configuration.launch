@@ -1,13 +1,15 @@
+<!--launch file for navigation dependencies 
+	Roscontrol ya deberia estar corriendo
+-->
 <launch>
 
- <node pkg="sensor_node_pkg" type="sensor_node_type" name="sensor_node_name" output="screen">
-    <param name="sensor_param" value="param_value" />
- </node>
- <node pkg="odom_node_pkg" type="odom_node_type" name="odom_node" output="screen">
-    <param name="odom_param" value="param_value" />
- </node>
- <node pkg="transform_configuration_pkg" type="transform_configuration_type" name="transform_configuration_name" output="screen">
-    <param name="transform_configuration_param" value="param_value" />
- </node>
+  ### SENSOR ###
+    <!--include file="$(find capbot_rplidar)/launch/rplidar.launch" /-->
+
+  ### ODOMETRY ###
+    <!--include file="$(find srf_laser_odometry)/launch/srf_laser_odometry.launch" /-->
+
+  ### TRANSFORM ###
+    <node pkg="capbot_setup_tf" type="tf_broadcaster" name="tf_broadcaster" output="screen" />
 
 </launch> 

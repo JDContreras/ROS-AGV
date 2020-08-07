@@ -3,23 +3,22 @@
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="capbot" xmlns:xacro="html://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find capbot_description)/urdf/capbot.gazebo" />
+  name="capbot_description">
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="0.0012013 -2.7E-05 0.019408"
+        xyz="0.019462 0.00056937 0.12444"
         rpy="0 0 0" />
       <mass
-        value="3.4164" />
+        value="8.127" />
       <inertia
-        ixx="0.018537"
-        ixy="3.222E-08"
-        ixz="2.921E-06"
-        iyy="0.017518"
-        iyz="8.7828E-13"
-        izz="0.033125" />
+        ixx="0.083537"
+        ixy="-9.6838E-07"
+        ixz="-5.7145E-06"
+        iyy="0.11259"
+        iyz="2.8774E-06"
+        izz="0.1919" />
     </inertial>
     <visual>
       <origin
@@ -45,74 +44,21 @@
       </geometry>
     </collision>
   </link>
-  <link
-    name="R_Link">
-    <inertial>
-      <origin
-        xyz="0 -2.0817E-17 -0.015"
-        rpy="0 0 0" />
-      <mass
-        value="0.15555" />
-      <inertia
-        ixx="0.00015549"
-        ixy="-7.6286E-20"
-        ixz="4.8878E-21"
-        iyy="0.00015549"
-        iyz="-6.0807E-19"
-        izz="0.000288" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://capbot_description/meshes/R_Link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://capbot_description/meshes/R_Link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="R_joint"
-    type="continuous">
-    <origin
-      xyz="-0.243 0 0"
-      rpy="1.5708 0 1.5708" />
-    <parent
-      link="base_link" />
-    <child
-      link="R_Link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
   <link
     name="L_Link">
     <inertial>
       <origin
-        xyz="0 -5.5511E-17 0.015"
+        xyz="1.8258E-09 4.6458E-05 0.016695"
         rpy="0 0 0" />
       <mass
-        value="0.15555" />
+        value="0.21431" />
       <inertia
-        ixx="0.00015549"
-        ixy="-3.9868E-20"
-        ixz="-1.2199E-21"
-        iyy="0.00015549"
-        iyz="-1.8262E-21"
-        izz="0.000288" />
+        ixx="0.00017886"
+        ixy="7.2586E-12"
+        ixz="-4.496E-13"
+        iyy="0.000179"
+        iyz="-8.4283E-12"
+        izz="0.00032907" />
     </inertial>
     <visual>
       <origin
@@ -142,49 +88,121 @@
     name="L_joint"
     type="continuous">
     <origin
-      xyz="0.244 0 0"
-      rpy="1.5708 0 1.5708" />
+      xyz="0 0.238 0"
+      rpy="1.5708 0 3.1416" />
     <parent
       link="base_link" />
     <child
       link="L_Link" />
     <axis
-      xyz="0 0 0" />
+      xyz="0 0 1" />
   </joint>
-
-
- <!-- rplidar Laser 4.7-->
-
-  <joint name="rplidar_joint" type="fixed">
-    <axis xyz="0 1 0" />
-    <origin xyz="0 0 0.2" rpy="0 0 0"/> 
-    <parent link="base_link"/>
-    <child link="laser"/>
-  </joint>
-
- 
-  <link name="laser">
-    <collision>
-      <origin xyz="0 0 0.04" rpy="1.5707 0 0"/>
+  <link
+    name="R_Link">
+    <inertial>
+      <origin
+        xyz="1.8258E-09 4.6458E-05 0.016695"
+        rpy="0 3.1416 0" />
+      <mass
+        value="0.21431" />
+      <inertia
+        ixx="0.00017886"
+        ixy="7.2586E-12"
+        ixz="-4.496E-13"
+        iyy="0.000179"
+        iyz="-8.4283E-12"
+        izz="0.00032907" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.1416 0" />
       <geometry>
-        <mesh filename="package://capbot_description/meshes/rplidar.dae" scale="0.001 0.001 0.001" />
+        <mesh
+          filename="package://capbot_description/meshes/R_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.1416 0" />
+      <geometry>
+        <mesh
+          filename="package://capbot_description/meshes/R_Link.STL" />
       </geometry>
     </collision>
-
-    <visual>
-      <origin xyz="0 0 0.04" rpy="1.5707 0 0"/>
-      <geometry>
-        <mesh filename="package://capbot_description/meshes/rplidar.dae" scale="0.001 0.001 0.001" />
-      </geometry>
-    </visual>
-
-    <inertial>
-      <mass value="1e-5" />
-      <origin xyz="0 0 0.04" rpy="1.5707 0 0"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
-    </inertial>
   </link>
-
+  <joint
+    name="R_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.238 0"
+      rpy="1.5708 -1.1915 3.1415" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://capbot_description/meshes/rplidar_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://capbot_description/meshes/rplidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rplidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.0 -0.0 0.2234"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
 <gazebo reference="laser">
     <sensor type="ray" name="head_rplidar_sensor">
       <pose>0 0 0 0 0 0</pose>
@@ -200,8 +218,8 @@
           </horizontal>
         </scan>
         <range>
-          <min>0.2</min>
-          <max>12.0</max>
+          <min>0.3</min>
+          <max>8.0</max>
           <resolution>0.01</resolution>
         </range>
         <noise>
@@ -211,11 +229,11 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_rplidar_controller" filename="libgazebo_ros_laser.so">
-        <topicName>LaserScan</topicName>
+        <topicName>scan</topicName>
         <frameName>laser</frameName>
       </plugin>
     </sensor>
-  </gazebo>+
+  </gazebo>
 
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
@@ -236,10 +254,10 @@
     <wheelDiameter>0.112</wheelDiameter>
 
     <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
-    <wheelAcceleration>10.0</wheelAcceleration>
+    <wheelAcceleration>5.0</wheelAcceleration>
 
     <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
-    <wheelTorque>5</wheelTorque>
+    <wheelTorque>7</wheelTorque>
 
     <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
     <commandTopic>cmd_vel</commandTopic>
@@ -254,8 +272,10 @@
     <robotBaseFrame>base_link</robotBaseFrame>
 
     <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
-    <odometrySource>1</odometrySource>
-
+    <odometrySource>world</odometrySource>
+    <publishTf>1</publishTf>
+	<publishOdomTF>true</publishOdomTF>
+<rosDebugLevel>na</rosDebugLevel>
     <!-- Set to true to publish transforms for the wheel links, defaults to false -->
     <publishWheelTF>true</publishWheelTF>
 
@@ -272,16 +292,21 @@
 
 <gazebo reference="base_link">
   <material>Gazebo/Grey</material>
+    <mu1 value="0.0"/>
+    <mu2 value="0.0"/>
 </gazebo>
 
-<gazebo reference="R_link">
+<gazebo reference="R_Link">
   <material>GGazebo/Blue</material>
+    <mu1 value="2.0"/>
+    <mu2 value="2.0"/>
 </gazebo>
 
-<gazebo reference="L_link">
+<gazebo reference="L_Link">
   <material>Gazebo/Blue</material>
+    <mu1 value="2.0"/>
+    <mu2 value="2.0"/>
 </gazebo>
-
 
 
 </robot>

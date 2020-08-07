@@ -1,3 +1,4 @@
+
 capbot_joint_publisher:
     type: joint_state_controller/JointStateController
     publish_rate: 100
@@ -14,7 +15,7 @@ capbot_velocity_controller:
     twist_covariance_diagonal: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     # Wheel separation and radius
     wheel_separation : 0.4
-    wheel_radius : 0.115
+    wheel_radius : 0.112
     # Wheel separation and radius multipliers
     wheel_separation_multiplier: 1.0 # default: 1.0
     wheel_radius_multiplier    : 1.0 # default: 1.0
@@ -30,14 +31,14 @@ capbot_velocity_controller:
     linear:
       x:
         has_velocity_limits    : true
-        #max_velocity           : 0.4  # m/s
-        #min_velocity           : -0.4 # m/s
+        max_velocity           : 0.4  # m/s
+        min_velocity           : -0.4 # m/s
         has_acceleration_limits: true
         max_acceleration       : 0.4  # m/s^2
         min_acceleration       : -0.4 # m/s^2
     angular:
       z:
         has_velocity_limits    : true
-        #max_velocity           : 0.5  # rad/s
+        max_velocity           : 0.5  # rad/s
         has_acceleration_limits: true
-        #max_acceleration       : 0.5  # rad/s^2
+        max_acceleration       : 0.5  # rad/s^2
