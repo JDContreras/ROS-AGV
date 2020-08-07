@@ -1,0 +1,16 @@
+<launch>
+    <!--rosparam file="$(find capbot_control)/config/hardware.yaml" command="load"/-->
+
+    <!--node name="capbot_hardware_interface_node" pkg="capbot_control" type="capbot_hardware_interface_node" output="screen"/-->
+
+    <rosparam file="$(find capbot_control)/config/controllers.yaml" command="load"/>
+
+    <!--rosparam file="$(find capbot_control)/config/joint_limits.yaml" command="load"/-->
+
+    <node name="controller_spawner" 
+        pkg="controller_manager" 
+        type="spawner" 
+        respawn="false" 
+        output="screen" 
+        args="capbot_velocity_controller capbot_joint_publisher"/>
+</launch>
